@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_google_products
-  revision: 9f54e449bbe5196982d99308bae2155b00da8f6e
+  revision: bd8d2c5763d07de700fa82d573acd5e6f5d76b1c
   branch: main
   specs:
     spree_google_products (1.0)
@@ -535,8 +535,8 @@ GEM
     money (6.19.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.8.0)
-    multi_json (1.18.0)
-    multi_xml (0.8.0)
+    multi_json (1.19.1)
+    multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     multipart-post (2.4.1)
     mutex_m (0.3.0)
@@ -636,7 +636,7 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.0)
+    public_suffix (7.0.2)
     puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
@@ -1058,8 +1058,8 @@ GEM
     tailwindcss-ruby (4.1.18-x86_64-linux-musl)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
-    thor (1.4.0)
-    tilt (2.6.1)
+    thor (1.5.0)
+    tilt (2.7.0)
     timecop (0.9.10)
     timeout (0.6.0)
     tinymce-rails (6.8.6.1)
