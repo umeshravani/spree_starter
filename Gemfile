@@ -101,7 +101,7 @@ gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
 # Spree gems
-spree_opts = '~> 5.2'
+spree_opts = '~> 5.2.5'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
@@ -115,5 +115,6 @@ gem "spree_klaviyo", "~> 1.1"
 
 gem 'spree_product_reviews', git: 'https://github.com/umeshravani/spree_product_reviews.git', branch: 'main'
 gem 'spree_razorpay_checkout', git: 'https://github.com/umeshravani/spree_razorpay.git', branch: 'main'
-gem 'spree_google_merchant_feed', git: 'https://github.com/umeshravani/spree_google_merchant', branch: 'main'
+#gem 'spree_google_merchant_feed', git: 'https://github.com/umeshravani/spree_google_merchant', branch: 'main'
 gem 'spree_delhivery', git: 'https://github.com/umeshravani/spree_delhivery.git', branch: 'main'
+gem 'spree_google_products', git: 'https://github.com/umeshravani/spree_google_products', branch: 'main'
