@@ -63,6 +63,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'listen', '>= 3.0'
   gem "foreman"
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -101,7 +102,7 @@ gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
 # Spree gems
-spree_opts = '~> 5.2.6'
+spree_opts = '~> 5.3.0'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
