@@ -47,7 +47,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: d1348688dd05fa6b34e26067db6b9f53e9f3c16b
+  revision: 3cde626a6a99e5eb4f0ab85cbc6f8affc31b5f61
   branch: main
   specs:
     spree_razorpay_checkout (0.2.0)
@@ -437,7 +437,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.3)
+    json (2.19.4)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
