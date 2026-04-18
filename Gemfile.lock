@@ -47,10 +47,11 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: 3cde626a6a99e5eb4f0ab85cbc6f8affc31b5f61
+  revision: 4d31caa22cdde159cfdf8ada2b8b789813ba1b0a
   branch: main
   specs:
     spree_razorpay_checkout (0.2.0)
+      activemerchant
       razorpay (~> 3.2)
       spree_core (>= 5.2)
       spree_extension
