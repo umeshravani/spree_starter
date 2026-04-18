@@ -1,69 +1,65 @@
 <% options_param_name ||= :options %>
 
 <% if product.has_variants? %>
-  <div id="product-variant-picker" class="flex flex-col mb-4 mt-2" style="gap: 10px;">
-
+  <div id='product-variant-picker' class="flex flex-col gap-y-6 mb-4 mt-2">
     <% product.option_types.each_with_index do |option_type, index| %>
-      <% selected_option = product_selected_option_for_option(
-            option_type,
-            product: product,
-            selected_variant: selected_variant,
-            options_param_name: options_param_name
-          ) %>
-
-      <% if option_type.color? %>
+      <% selected_option = product_selected_option_for_option(option_type, product: product, selected_variant: selected_variant, options_param_name: options_param_name) %>
+      
+      <% if option_type.color_swatch? || (option_type.respond_to?(:kind) && option_type.kind == 'color_swatch') %>
         <%= option_type_colors_preview_styles(option_type).html_safe %>
         <fieldset data-option-id="<%= option_type.id %>" class="flex flex-col gap-y-2">
-          <span class="text-sm leading-4 tracking-normal">
-            <%= option_type.presentation %>: <strong class="uppercase font-semibold"><%= selected_option.presentation %></strong>
-          </span>
-          <ul class="flex items-center flex-wrap gap-1">
-            <%= render 'spree/products/variant_options',
-                  product: product,
-                  option_type: option_type,
-                  position: index,
-                  selected_variant: selected_variant,
-                  options_param_name: options_param_name %>
+          <legend class="text-sm font-semibold uppercase tracking-widest text-default">
+            <%= option_type.presentation %>: 
+            <span class="font-normal text-gray-500"><%= selected_option&.presentation %></span>
+          </legend>
+          <ul class="flex items-center flex-wrap gap-2" role="listbox" aria-label="<%= option_type.presentation %>">
+            <%= render 'spree/products/variant_options', product: product, option_type: option_type, position: index, selected_variant: selected_variant, options_param_name: options_param_name %>
           </ul>
+        </fieldset>
+
+      <% elsif option_type.respond_to?(:kind) && option_type.kind == 'buttons' %>
+        <fieldset data-option-id="<%= option_type.id %>" class="flex flex-col gap-y-3">
+          <legend class="text-sm font-semibold uppercase tracking-widest text-default">
+            <%= option_type.presentation %>
+          </legend>
+          <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="<%= option_type.presentation %>">
+            <%= render 'spree/products/variant_options', product: product, option_type: option_type, position: index, selected_variant: selected_variant, options_param_name: options_param_name %>
+          </div>
         </fieldset>
 
       <% else %>
         <fieldset data-option-id="<%= option_type.id %>" class="flex flex-col gap-y-2">
-          <span class="text-sm font-medium tracking-normal">
+          <legend class="text-sm font-semibold uppercase tracking-widest text-default">
             <%= option_type.presentation %>
-          </span>
+          </legend>
+          <div data-controller="dropdown" class="relative" role="group">
+            <button
+              data-action="click->dropdown#toggle click@window->dropdown#hide"
+              type='button'
+              class='w-full text-sm uppercase tracking-widest flex justify-between items-center border border-default py-3 px-4 rounded-input dropdown-button bg-background'
+              data-dropdown-target="button"
+              aria-haspopup="listbox"
+              aria-label="<%= selected_option ? "#{option_type.presentation}: #{selected_option.presentation}" : Spree.t('storefront.variant_picker.please_choose', option_type: option_type.presentation) %>">
+              
+              <span id="option-<%= option_type.id %>-value" class="text-default">
+                <% if selected_option %>
+                  <%= selected_option.presentation %>
+                <% else %>
+                  <%= Spree.t('storefront.variant_picker.please_choose', option_type: option_type.presentation) %>
+                <% end %>
+              </span>
+              <%= render 'spree/shared/icons/chevron_down', size: 16 %>
+            </button>
 
-          <ul class="flex items-center flex-wrap gap-2">
-            <% product_option_values_for_option(option_type, product: product).each_with_index do |value, i| %>
-              <% input_id = "product-option-#{product.id}-#{index}-#{i}" %>
-              <% is_selected = selected_option == value %>
-
-              <%= radio_button_tag(
-                    option_type.presentation,
-                    value.name,
-                    is_selected,
-                    class: "sr-only peer",
-                    id: input_id,
-                    name: "#{options_param_name}[#{option_type.id}]",
-                    data: {
-                      action: 'change->product-form#updateVariant',
-                      product_form_target: 'option',
-                      option_id: option_type.id
-                    }
-                  ) %>
-              <label
-                for="<%= input_id %>"
-                class="<%= class_names(
-                        'btn inline-block text-sm px-4 py-2 rounded-md border transition whitespace-nowrap hover:bg-accent hover:text-black hover:border-accent',
-                        is_selected ? 'bg-black text-white border-black' : 'bg-white text-gray-800 border-gray-300'
-                      ) %>">
-                <%= value.presentation %>
-              </label>
-            <% end %>
-          </ul>
+            <div data-dropdown-target="menu"
+                 class="hidden absolute top-12 left-0 z-50 w-full shadow-lg border border-default bg-background overflow-hidden rounded-input">
+              <div class="max-h-60 overflow-y-auto">
+                <%= render 'spree/products/variant_options', product: product, option_type: option_type, position: index, selected_variant: selected_variant, options_param_name: options_param_name %>
+              </div>
+            </div>
+          </div>
         </fieldset>
       <% end %>
     <% end %>
-
   </div>
 <% end %>

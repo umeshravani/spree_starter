@@ -1,0 +1,86 @@
+<% selected_option = product_selected_option_for_option(option_type, product: product, selected_variant: selected_variant, options_param_name: options_param_name) %>
+
+<% variants_available_arr = product.variants.map { |v| v.purchasable? && v.price_in(current_currency).amount.present? } %>
+<% variants_option1_arr = product.variants.map { |v| v.options.first&.dig(:value) } %>
+<% variants_option2_arr = product.variants.map { |v| v.options.second&.dig(:value) } %>
+<% variants_option3_arr = product.variants.map { |v| v.options.third&.dig(:value) } %>
+
+<% product_option_values_for_option(option_type, product: product).each_with_index do |value, index| %>
+  <% option_disabled = true %>
+  <% variants_option1_arr.each_with_index do |option1_name, idx| %>
+    <% case position %>
+    <% when 0 %>
+      <% if option1_name == value.name && variants_available_arr[idx] %>
+        <% option_disabled = false %>
+      <% end %>
+    <% when 1 %>
+      <% if product_selected_option_for_option(product.option_types[0], product: product, options_param_name: options_param_name)&.name == option1_name && variants_option2_arr[idx] == value.name && variants_available_arr[idx] %>
+        <% option_disabled = false %>
+      <% end %>
+    <% when 2 %>
+      <% if product_selected_option_for_option(product.option_types[0], product: product, options_param_name: options_param_name)&.name == option1_name && variants_option2_arr[idx] == product_selected_option_for_option(product.option_types[1], product: product, options_param_name: options_param_name)&.name && variants_option3_arr[idx] == value.name && variants_available_arr[idx] %>
+        <% option_disabled = false %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if option_type.color_swatch? || (option_type.respond_to?(:kind) && option_type.kind == 'color_swatch') %>
+    <li role="option" aria-label="<%= value.presentation %>">
+      <label class="cursor-pointer" aria-label="<%= value.presentation %>">
+        <%= radio_button_tag option_type.presentation, value.name, selected_option == value,
+              name: option_type.presentation,
+              id: "product-option-#{product.id}-#{position}-#{index}",
+              class: "sr-only peer color-input",
+              disabled: option_disabled,
+              data: { action: 'change->product-form#updateVariant', product_form_target: 'option', option_id: option_type.id } %>
+        <%= render 'spree/products/color_picker', disabled: option_disabled %>
+      </label>
+    </li>
+
+  <% elsif option_type.respond_to?(:kind) && option_type.kind == 'buttons' %>
+    <label for="product-option-<%= product.id %>-<%= position %>-<%= index %>" 
+           class="<%= class_names(
+             # BASE: Added `rounded-button` so ALL states inherit the Spree admin theme's border radius
+             'inline-flex items-center justify-center w-max min-w-[48px] h-10 px-4 text-sm font-medium transition-all cursor-pointer rounded-button',
+             {
+               'btn-primary border-transparent': selected_option == value,
+               'border border-default text-default bg-background hover:bg-accent': selected_option != value,
+               'opacity-40 cursor-not-allowed': option_disabled
+             }
+           ) %>">
+      <%= radio_button_tag option_type.presentation, value.name, selected_option == value,
+            id: "product-option-#{product.id}-#{position}-#{index}",
+            class: "sr-only",
+            disabled: option_disabled,
+            data: { action: 'change->product-form#updateVariant', product_form_target: 'option', option_id: option_type.id } %>
+      <%= value.presentation %>
+    </label>
+
+  <% else %>
+    <%= radio_button_tag option_type.presentation, value.name, selected_option == value,
+          class: class_names('hidden', {
+            'peer/unavailable': selected_variant.nil?, 
+            'peer/available': selected_variant.present?
+          }),
+          data: { action: 'change->product-form#updateVariant', product_form_target: 'option', option_id: option_type.id },
+          name: option_type.presentation,
+          id: "product-option-#{product.id}-#{position}-#{index}",
+          disabled: option_disabled %>
+    <label
+      for='product-option-<%= product.id %>-<%= position %>-<%= index %>'
+      class="<%= class_names(
+        'text-sm flex items-center justify-between px-4 py-3 transition duration-150',
+        {
+          'opacity-50 cursor-not-allowed': option_disabled,
+          'cursor-pointer hover:bg-accent': !option_disabled,
+          'bg-accent/50 font-bold': selected_option == value
+        }
+      ) %>"
+    >
+      <span><%= value.presentation %></span>
+      <% if selected_option == value %>
+        <%= render 'spree/shared/icons/check', size: 16 %>
+      <% end %>
+    </label>
+  <% end %>
+<% end %>

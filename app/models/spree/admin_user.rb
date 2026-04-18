@@ -4,5 +4,5 @@ class Spree::AdminUser < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  include Spree::UserMethods
+  include Spree::AdminUserMethods
 end
