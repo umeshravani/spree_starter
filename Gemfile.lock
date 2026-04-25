@@ -47,7 +47,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: 455bd65d1ca3a6b177ab50c542ef6a7e0b712e97
+  revision: 33937843e07e6c8091c963a07be4ff79ec6a5b43
   branch: main
   specs:
     spree_razorpay_checkout (0.3.1)
@@ -590,11 +590,11 @@ GEM
     orm_adapter (0.5.0)
     os (1.1.4)
     ostruct (0.6.3)
-    pagy (43.5.1)
+    pagy (43.5.2)
       json
       uri
       yaml
-    parallel (2.0.1)
+    parallel (2.1.0)
     parallel_tests (5.7.0)
       parallel
     paranoia (3.1.0)
