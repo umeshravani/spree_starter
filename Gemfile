@@ -111,12 +111,12 @@ gem 'jsonapi-rspec', group: :test
 gem 'spree_legacy_api_v2'
 
 # Spree gems
-spree_opts = '~> 5.4.1'
+spree_opts = '~> 5.4.2'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_admin", spree_opts
-gem "spree_storefront", spree_opts
-gem "spree_page_builder", spree_opts
+gem "spree_storefront"
+gem "spree_page_builder"
 gem "spree_i18n"
 gem "spree_stripe"
 gem "spree_google_analytics", "~> 1.1"
