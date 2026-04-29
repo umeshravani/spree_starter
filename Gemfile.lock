@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_product_reviews.git
-  revision: 3df861ac7ab936dcf15a748c110eb0ecf46a53ab
+  revision: da86bb51a87ad99d8e103fea3bff1c2fd0bc4866
   branch: main
   specs:
     spree_product_reviews (1.2.0)
