@@ -108,7 +108,7 @@ gem 'activemerchant'
 gem "spree_multi_store", "~> 1.0"
 gem "spree_posts", "~> 1.0"
 gem 'jsonapi-rspec', group: :test
-#gem 'spree_legacy_api_v2'
+gem 'spree_legacy_api_v2'
 
 # Spree gems
 spree_opts = '~> 5.4.2'
