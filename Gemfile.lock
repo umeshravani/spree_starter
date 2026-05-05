@@ -56,6 +56,16 @@ GIT
       spree_core (>= 5.3)
       spree_extension
 
+GIT
+  remote: https://github.com/umeshravani/spree_three_d_ar.git
+  revision: a4643887c62fb9cf03b725509e87796b6a1769ac
+  branch: main
+  specs:
+    spree_three_d_ar (0.1.0)
+      spree_admin (~> 5.4.1)
+      spree_api (~> 5.4.1)
+      spree_core (~> 5.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -1160,6 +1170,7 @@ DEPENDENCIES
   spree_razorpay_checkout!
   spree_storefront
   spree_stripe
+  spree_three_d_ar!
   stimulus-rails
   turbo-rails
   tzinfo-data
