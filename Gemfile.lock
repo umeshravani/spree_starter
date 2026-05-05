@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
-  revision: fe4f856dd2e203b15e115568f268a99bc9654ad7
+  revision: 033b869175072baf2ae752aaae3088919b857dac
   branch: main
   specs:
     spree_delhivery (0.0.1)
@@ -47,7 +47,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: 33937843e07e6c8091c963a07be4ff79ec6a5b43
+  revision: 7df3099e669a2828a32a813bfc42c06153b1207e
   branch: main
   specs:
     spree_razorpay_checkout (0.3.1)
@@ -58,7 +58,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_three_d_ar.git
-  revision: a4643887c62fb9cf03b725509e87796b6a1769ac
+  revision: 7336cfb7057ad54fc6897aefaf859b5f2c88e6b7
   branch: main
   specs:
     spree_three_d_ar (0.1.0)
@@ -197,7 +197,7 @@ GEM
     benchmark (0.5.0)
     bigdecimal (4.1.2)
     bindex (0.8.1)
-    bootsnap (1.24.1)
+    bootsnap (1.24.3)
       msgpack (~> 1.2)
     brakeman (8.0.4)
       racc
@@ -263,7 +263,7 @@ GEM
     drb (2.2.3)
     erb (6.0.4)
     erubi (1.13.1)
-    factory_bot (6.5.6)
+    factory_bot (6.6.0)
       activesupport (>= 6.1.0)
     factory_bot_rails (6.5.1)
       factory_bot (~> 6.5)
@@ -448,7 +448,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.4)
+    json (2.19.5)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -518,7 +518,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.21.0)
       libv8-node (~> 24.12.0.1)
-    minitest (6.0.5)
+    minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
     mobility (1.3.2)
@@ -535,8 +535,8 @@ GEM
     money (6.19.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.8.0)
-    multi_json (1.20.1)
-    multi_xml (0.8.1)
+    multi_json (1.21.1)
+    multi_xml (0.9.1)
       bigdecimal (>= 3.1, < 5)
     multipart-post (2.4.1)
     mutex_m (0.3.0)
