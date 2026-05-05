@@ -1,8 +1,6 @@
-# This migration comes from spree_three_d_ar (originally 20260504124927)
-class CreateSpreeThreeDMaterialOptionValues < ActiveRecord::Migration[7.0] # Your version may vary
+class CreateSpreeThreeDMaterialOptionValues < ActiveRecord::Migration[7.0]
   def change
-    create_table :spree_three_d_material_option_values do, if_not_exists: true |t|
-      # Added custom, shorter index names to bypass the 64-character limit
+    create_table :spree_three_d_material_option_values, if_not_exists: true do |t|
       t.references :three_d_material, 
                    null: false, 
                    foreign_key: { to_table: :spree_three_d_materials }, 
