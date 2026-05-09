@@ -647,6 +647,9 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
+    rack-cors (3.0.0)
+      logger
+      rack (>= 3.0.14)
     rack-protection (4.2.1)
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
@@ -1124,6 +1127,7 @@ DEPENDENCIES
   pry
   pry-remote
   puma (>= 5.0)
+  rack-cors
   rails (~> 8.0.0)
   rails-controller-testing
   redis (>= 4.0.1)

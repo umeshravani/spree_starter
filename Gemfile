@@ -96,6 +96,9 @@ gem 'sidekiq'
 # Use Devise for authentication
 gem "devise"
 
+# Use CORS for Next.JS
+gem 'rack-cors'
+
 # Sentry for error/performance monitoring
 gem 'sentry-ruby'
 gem 'sentry-rails'
