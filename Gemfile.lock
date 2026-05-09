@@ -58,7 +58,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_three_d_ar.git
-  revision: f217f382a62e0fc798eeb4f285caa8e07eac31ce
+  revision: 561125e789dadaed276fd0780554a72e017c920e
   branch: main
   specs:
     spree_three_d_ar (0.1.0)
