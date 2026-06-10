@@ -19,7 +19,7 @@ Spree.config do |config|
 end
 
 # MULTI-STORE SUPPORT:
-Spree.root_domain = ENV.fetch('SPREE_ROOT_DOMAIN', 'thewallx.com')
+#Spree.root_domain = ENV.fetch('SPREE_ROOT_DOMAIN', 'thewallx.com')
 
 # Background job queue names
 # Spree.queues.default = :default
