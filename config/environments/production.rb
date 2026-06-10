@@ -116,14 +116,19 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
-  # Enable DNS rebinding protection and other `Host` header attacks.
-  # config.hosts = [
-  #   "example.com",     # Allow requests from example.com
-  #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
-  # ]
-  #
+  # Enable DNS rebinding protection and allow your specific custom production domains
+  config.hosts = [
+    "thewallx.com",          # Live WallX Storefront
+    "artolika.com",          # Live Artolika Storefront
+    "app.thewallx.com",      # Your Spree Admin Panel
+    "api.thewallx.com",      # WallX Frontend API Endpoint
+    "api.artolika.com",      # Artolika Frontend API Endpoint
+    /.*\.thewallx\.com/,     # Automatically allows any other subdomains for WallX
+    /.*\.artolika\.com/      # Automatically allows any other subdomains for Artolika
+  ]
+  
   # Skip DNS rebinding protection for the default health check endpoint.
-  # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   # Fix for Render deployment
   # this will set the store URL to the render external URL during db:seeds for the first time
