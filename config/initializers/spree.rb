@@ -18,6 +18,9 @@ Spree.config do |config|
   # config.track_inventory_levels = false
 end
 
+# MULTI-STORE SUPPORT:
+Spree.root_domain = ENV.fetch('SPREE_ROOT_DOMAIN', 'thewallx.com')
+
 # Background job queue names
 # Spree.queues.default = :default
 # Spree.queues.variants = :default
