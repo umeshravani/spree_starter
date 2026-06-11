@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
-  revision: 1fa1f5f4a1229166d5c6689e83d526c92256525f
+  revision: c95c444a9ec624c14b0fab434a66913afb3e681d
   branch: main
   specs:
     spree_delhivery (0.0.1)
@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_product_reviews.git
-  revision: 56ae8d4681737c7cc73e2809997255e224dee008
+  revision: 842dbbce368d923b5624338fef382b5a8e070f6b
   branch: main
   specs:
     spree_product_reviews (1.2.0)
@@ -47,7 +47,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: d5121e827863f0c79d1743334937c19d9e6f6ba9
+  revision: c21de531b52926caa7501e5a2a862e9ade4ddb0b
   branch: main
   specs:
     spree_razorpay_checkout (0.3.3)
