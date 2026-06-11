@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/olympusone/spree_cod_payment.git
-  revision: fa48dc7cb41a6e0be7b24efe12cd0d43276fe08e
-  branch: main
-  specs:
-    spree_cod_payment (2.1.6)
-      spree (>= 5.2.0)
-      spree_admin (>= 5.2.0)
-      spree_extension
-      spree_storefront (>= 5.2.0)
-
-GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
   revision: 335a4a338281fc1e00bcbcc5a07d7e2f10cdd854
   branch: main
@@ -419,8 +408,6 @@ GEM
       googleapis-common-protos-types (~> 1.0)
     hashie (5.1.0)
       logger
-    heroicon (1.0.0)
-      rails (>= 5.2)
     highline (3.1.2)
       reline
     hightop (0.6.0)
@@ -531,9 +518,6 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mail_form (1.11.0)
-      actionpack (>= 7.0)
-      activemodel (>= 7.0)
     mapkick-rb (0.3.0)
     marcel (1.2.1)
     matrix (0.4.3)
@@ -996,43 +980,18 @@ GEM
       spree (>= 5.4.3)
     spree_extension (1.0.2)
       thor (~> 1.0)
-    spree_google_analytics (1.1.2)
-      spree (>= 5.1.0)
-      spree_admin (>= 5.1.0)
-      spree_extension
-      spree_storefront (>= 5.1.0)
     spree_i18n (5.3.2)
       i18n_data
       kaminari-i18n
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_klaviyo (1.1.2)
-      spree (>= 5.1.0.beta2)
-      spree_admin (>= 5.1.0.beta2)
     spree_multi_store (1.0.1)
       spree (>= 5.4.0.beta)
       spree_admin (>= 5.4.0.beta)
-    spree_page_builder (5.4.3)
-      spree (>= 5.4.0)
-      spree_admin (>= 5.4.0)
-      spree_posts
     spree_posts (1.0.0)
       spree (>= 5.4.0.beta)
       spree_admin (>= 5.4.0.beta)
-    spree_storefront (5.4.3)
-      active_link_to
-      heroicon
-      importmap-rails
-      inline_svg (~> 1.10)
-      local_time (~> 3.0)
-      mail_form
-      pagy (~> 43.0)
-      spree_page_builder (>= 5.4.3)
-      stimulus-rails
-      tailwindcss-rails
-      tailwindcss-ruby
-      turbo-rails
     spree_stripe (1.7.0)
       spree (>= 5.4.0.beta)
       spree_admin (>= 5.4.0.beta)
@@ -1178,14 +1137,11 @@ DEPENDENCIES
   solargraph-rails
   spree (~> 5.4.3)
   spree_admin (~> 5.4.3)
-  spree_cod_payment!
   spree_delhivery!
   spree_dev_tools
   spree_emails (~> 5.4.3)
-  spree_google_analytics (~> 1.1)
   spree_google_products!
   spree_i18n
-  spree_klaviyo (~> 1.1)
   spree_multi_store (~> 1.0)
   spree_posts (~> 1.0)
   spree_product_reviews!
