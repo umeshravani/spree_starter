@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
-  revision: f7227e4f7b14e2d121fea5f04d584e0a0c93ecc5
+  revision: 403879d391b0dd586d9466474d64440edc6b0f2a
   branch: main
   specs:
     spree_delhivery (0.0.1)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_google_products
-  revision: 837ef7ce76726e111c19dbe2fdee61a2355055e0
+  revision: 681f3e1408e96325128ad547c3462d9f6325fa60
   branch: main
   specs:
     spree_google_products (1.0)
