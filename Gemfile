@@ -51,6 +51,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 
+  gem 'bundler-audit', require: false
   gem 'brakeman'
   gem 'dotenv-rails', '~> 3.1'
   gem 'rubocop', '~> 1.23'
@@ -90,6 +91,13 @@ group :test do
   gem 'rails-controller-testing'
 end
 
+# Admin UI Tailwind CSS
+gem 'tailwindcss-rails'
+
+# Infrastructure
+gem 'aws-sdk-s3', require: false
+gem 'lograge'
+
 # Use Sidekiq for background jobs
 gem 'sidekiq'
 
@@ -118,13 +126,13 @@ spree_opts = '~> 5.4.3'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_admin", spree_opts
-gem "spree_storefront"
-gem "spree_page_builder"
+#gem "spree_storefront"
+#gem "spree_page_builder"
 gem "spree_i18n"
 gem "spree_stripe"
 gem "spree_google_analytics", "~> 1.1"
 gem "spree_klaviyo", "~> 1.1"
-#gem "spree_paypal_checkout", "~> 0.5"
+#gem "spree_paypal_checkout"
 
 gem 'spree_product_reviews', git: 'https://github.com/umeshravani/spree_product_reviews.git', branch: 'main'
 gem 'spree_razorpay_checkout', git: 'https://github.com/umeshravani/spree_razorpay.git', branch: 'main'
