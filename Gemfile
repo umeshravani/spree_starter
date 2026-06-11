@@ -101,6 +101,8 @@ gem 'lograge'
 # Use Sidekiq for background jobs
 gem 'sidekiq'
 
+gem 'multi_json'
+
 # Use Devise for authentication
 gem "devise"
 
