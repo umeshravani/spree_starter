@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
-  revision: 403879d391b0dd586d9466474d64440edc6b0f2a
+  revision: 6c3dd86f78e879382d64af1f93fcb3c20509281c
   branch: main
   specs:
     spree_delhivery (0.0.1)
@@ -458,7 +458,7 @@ GEM
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     jmespath (1.6.2)
-    json (2.19.8)
+    json (2.19.9)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -735,7 +735,7 @@ GEM
       tsort
     redis (5.4.1)
       redis-client (>= 0.22.0)
-    redis-client (0.29.0)
+    redis-client (0.30.0)
       connection_pool
     regexp_parser (2.12.0)
     reline (0.6.3)
@@ -1000,10 +1000,10 @@ GEM
       stripe_event (~> 2.14)
     sqids (0.2.2)
     ssrf_filter (1.5.0)
-    state_machines (0.101.0)
-    state_machines-activemodel (0.102.0)
+    state_machines (0.200.0)
+    state_machines-activemodel (0.200.0)
       activemodel (>= 7.2)
-      state_machines (>= 0.101.0)
+      state_machines (>= 0.200.0)
     state_machines-activerecord (0.103.0)
       activerecord (>= 7.2)
       state_machines-activemodel (>= 0.102.0)
