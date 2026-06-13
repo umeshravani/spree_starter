@@ -16,6 +16,9 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+  
+  # Disable legacy ActionMailer emails so Next.js can take over via Webhooks
+  config.send_core_emails = false
 end
 
 # MULTI-STORE SUPPORT:
